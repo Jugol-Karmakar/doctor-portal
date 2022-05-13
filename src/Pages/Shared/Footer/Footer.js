@@ -3,79 +3,59 @@ import { FaHome, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BsFillTelephoneFill, BsFacebook } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { ImGooglePlus, ImLinkedin2 } from "react-icons/im";
+import footerimg from "../../../Images/image/footer.png";
 
 const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <div>
-      <div class="footer p-10 text-base-content bg-black">
+    <div
+      class="bg-base-300"
+      style={{
+        background: `url(${footerimg})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <footer class="footer p-20  flex flex-col lg:flex-row lg:justify-between container mx-auto">
         <div>
-          <h1 className="text-3xl font-extrabold text-white">Doctor Portal</h1>
-          <div class="flex flex-col gap-4">
-            <div className="flex items-center">
-              <a>
-                <FaHome className="mr-3 text-lg text-white"></FaHome>
+          <span class="text-2xl font-bold text-[#3A4256]">Services</span>
+          <a class="link link-hover">Emergency Checkup</a>
+          <a class="link link-hover">Monthly Checkup</a>
+          <a class="link link-hover">Weekly Checkup</a>
+          <a class="link link-hover">Deep Checkup</a>
+        </div>
+        <div>
+          <span class="text-2xl font-bold text-[#3A4256]">ORAL HEALTH</span>
+          <a class="link link-hover">Fluoride Treatment</a>
+          <a class="link link-hover">Cavity Filling</a>
+          <a class="link link-hover">Teath Whitening</a>
+        </div>
+        <div>
+          <span class="text-2xl font-bold text-[#3A4256]">OUR ADDRESS</span>
+          <div class="grid grid-flow-col gap-4">
+            <div className="flex flex-col">
+              <a className="flex items-center mb-3">
+                <FaHome className="text-lg mr-2 text-cyan-600" /> 58 A, East
+                Madison Street, Baltimore
               </a>
-              <p className="text-lg text-white">
-                No: 58 A, East Madison Street, Baltimore, MD, USA 4508
-              </p>
-            </div>
-
-            <div className="flex items-center">
-              <a>
-                <BsFillTelephoneFill className="mr-3 text-lg text-white"></BsFillTelephoneFill>
+              <a className="flex items-center mb-3">
+                {" "}
+                <BsFillTelephoneFill className="text-lg mr-2 text-cyan-600" />
+                +91 12345678
               </a>
-              <p className="text-lg text-white">+91 12345678</p>
-            </div>
-            <div className="flex items-center">
-              <a>
-                <MdEmail className="mr-3 text-lg text-white"></MdEmail>
+              <a className="flex items-center mb-3">
+                <MdEmail className="text-lg mr-2 text-cyan-600" />
+                support@somemail.com
               </a>
-              <p className="text-lg text-white">support@somemail.com</p>
             </div>
           </div>
-
-          <div className="flex items-center flex-row mt-4">
-            <a>
-              <FaTwitter className="text-2xl text-white mx-2"></FaTwitter>
-            </a>
-            <a>
-              <BsFacebook className="text-2xl text-white mx-2"></BsFacebook>
-            </a>
-            <a>
-              <ImGooglePlus className="text-2xl text-white mx-2"></ImGooglePlus>
-            </a>
-
-            <a>
-              <ImLinkedin2 className="text-2xl text-white mx-2"></ImLinkedin2>
-            </a>
-            <a>
-              <FaYoutube className="text-2xl text-white mx-2"></FaYoutube>
-            </a>
-          </div>
         </div>
+      </footer>
+      <div class="text-center p-6">
         <div>
-          <span class="text-xl font-bold text-white">Services</span>
-          <a class="link link-hover text-white text-lg">Branding</a>
-          <a class="link link-hover text-white text-lg">Design</a>
-          <a class="link link-hover text-white text-lg">Marketing</a>
-          <a class="link link-hover text-white text-lg">Advertisement</a>
-        </div>
-        <div>
-          <span class="text-xl font-bold text-white">Company</span>
-          <a class="link link-hover text-white text-lg">About us</a>
-          <a class="link link-hover text-white text-lg">Contact</a>
-          <a class="link link-hover text-white text-lg">Jobs</a>
-          <a class="link link-hover text-white text-lg">Press kit</a>
-        </div>
-      </div>
-
-      <div class="footer footer-center p-10 text-base-content bg-black">
-        <div>
-          <p className="text-white text-lg">
-            Copyright ©. {year} All right reserved.{" "}
-            <strong>Doctor Portal</strong>
+          <p className="text-sm">
+            Copyright © {year} - All right reserved.{" "}
+            <strong className="text-cyan-500">Doctor Portal</strong>
           </p>
         </div>
       </div>

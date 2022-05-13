@@ -1,10 +1,14 @@
 import React from "react";
 import chairImage from "../../../Images/image/chair.png";
 import bgImage from "../../../Images/image/bg.png";
+import Button from "../../Shared/Button/Button";
 
 const Hero = () => {
   return (
-    <div class="hero min-h-screen bg-base-100">
+    <div
+      class="hero min-h-screen bg-base-100"
+      style={{ background: `url(${bgImage})` }}
+    >
       <div class="hero-content flex-col lg:flex-row-reverse">
         <div>
           <img src={chairImage} />
@@ -19,9 +23,7 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button class="btn bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-500 hover:to-cyan-500 border-0 px-10 font-bold rounded-full">
-            Get Started
-          </button>
+          <Button>Get Started</Button>
         </div>
       </div>
     </div>
