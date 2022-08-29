@@ -14,15 +14,15 @@ const Services = () => {
         "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the",
     },
     {
-      _id: 1,
-      name: "Fluoride Treatment",
+      _id: 2,
+      name: "Cavity Filling",
       image: cavity,
       description:
         "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the",
     },
     {
-      _id: 1,
-      name: "Fluoride Treatment",
+      _id: 3,
+      name: "Teeth Whitening",
       image: teeth,
       description:
         "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the",
@@ -37,7 +37,7 @@ const Services = () => {
       </div>
       <div className="container mx-auto px-5 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {services.map((service) => (
-          <Service service={service} key={service.id}></Service>
+          <Service service={service} key={service._id}></Service>
         ))}
       </div>
     </div>

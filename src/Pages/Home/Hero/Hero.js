@@ -6,19 +6,19 @@ import Button from "../../Shared/Button/Button";
 const Hero = () => {
   return (
     <div
-      class="hero min-h-screen bg-base-100"
-      style={{ background: `url(${bgImage})` }}
+      className="hero min-h-screen bg-base-100"
+      style={{ background: `url(${bgImage})`, backgroundSize: "contain" }}
     >
-      <div class="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <div>
-          <img src={chairImage} />
+          <img src={chairImage} alt="" />
         </div>
 
         <div>
-          <h1 class="text-5xl font-black text-black drop-shadow">
+          <h1 className="text-5xl font-black text-black drop-shadow">
             Your New Smile Starts Here
           </h1>
-          <p class="py-6">
+          <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.

@@ -6,7 +6,7 @@ import Button from "../../Shared/Button/Button";
 const MakeAppoinment = () => {
   return (
     <section
-      className="w-full my-10"
+      className="w-full mt-10"
       style={{ background: `url(${appointment})` }}
     >
       <div className="container mx-auto px-20 flex lg:flex-row flex-col  items-center">

@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "1",
+    "name": "Dr. Anagha Menen",
+    "image": "https://j758s1irpz926ddw14fjwet1-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/doctor1.jpg",
+    "specialist": "Cosmetic Surgery",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "2",
+    "name": "Dr. Vora Thumnus",
+    "image": "https://j758s1irpz926ddw14fjwet1-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/doctor3-1.jpg",
+    "specialist": "Orthodontist",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "3",
+    "name": "Dr. Charl marks",
+    "image": "https://j758s1irpz926ddw14fjwet1-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/doctor4-1.jpg",
+    "specialist": "General, Orthodontist",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "4",
+    "name": "Dr.Quintina",
+    "image": "https://j758s1irpz926ddw14fjwet1-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/doctor7.jpg",
+    "specialist": "General, Maxillofacial Surgery",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "5",
+    "name": "Dr.Daniel Craig",
+    "image": "https://j758s1irpz926ddw14fjwet1-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/doctor5-2.jpg",
+    "specialist": "Laboratory, Orthodontist",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "6",
+    "name": "Dr.Ankitha Prem",
+    "image": "https://j758s1irpz926ddw14fjwet1-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/doctor2-1.jpg",
+    "specialist": "Cosmetic Surgery",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "7",
+    "name": "Dr. Anagha Menen",
+    "image": "http://el.commonsupport.com/newwp/dento/wp-content/uploads/2019/12/1-2.jpg",
+    "specialist": "Cosmetic Surgery",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "8",
+    "name": "Dr. Anagha Menen",
+    "image": "http://el.commonsupport.com/newwp/dento/wp-content/uploads/2019/12/2-2.jpg",
+    "specialist": "Cosmetic Surgery",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  },
+  {
+    "_id": "9",
+    "name": "Dr. Anagha Menen",
+    "image": "http://el.commonsupport.com/newwp/dento/wp-content/uploads/2019/12/3-2.jpg",
+    "specialist": "Cosmetic Surgery",
+    "degree": "M.D, pH.D",
+    "details": "pharetra ultricies aenean, sit metus integer arcu turpis dndimentum pellentesque world."
+  }
+]

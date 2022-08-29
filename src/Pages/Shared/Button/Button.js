@@ -3,7 +3,7 @@ import React from "react";
 const Button = ({ children }) => {
   return (
     <div>
-      <button class="btn bg-gradient-to-r from-cyan-500 to-blue-500  border-0 px-10 font-bold rounded-full">
+      <button className="bg-blue-600 px-10 py-3 font-bold rounded-full text-white drop-shadow-lg hover:bg-blue-500 transition-all duration-300">
         {children}
       </button>
     </div>
