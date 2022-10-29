@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import logo from "../../../Images/image/logo.png";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -40,14 +41,14 @@ const Header = () => {
             Sign Out
           </button>
         ) : (
-          <Link to="/signin">Login</Link>
+          <Link to="/signin">Sign In</Link>
         )}
       </li>
     </>
   );
   return (
-    <div className="bg-base-100 sticky top-0 z-40">
-      <div className="container mx-auto navbar ">
+    <div className="bg-base-100 sticky top-0 z-40 shadow">
+      <div className="container mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -73,22 +74,23 @@ const Header = () => {
               {menuItem}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
-            Doctor Portal
+          <Link to="/" className="flex items-center">
+            <img className="w-20 mr-2" src={logo} alt="" />
+            <h4 className="text-lg font-medium">Doctor Portal</h4>
           </Link>
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">{menuItem}</ul>
+          <ul className="menu menu-horizontal p-2">{menuItem}</ul>
         </div>
         {/* <div className="flex justify-end">
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden justify-end"
-        >
-          Dashboard Item
-        </label>
-      </div> */}
+          <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary drawer-button lg:hidden justify-end"
+          >
+            Dashboard Item
+          </label>
+        </div> */}
       </div>
     </div>
   );

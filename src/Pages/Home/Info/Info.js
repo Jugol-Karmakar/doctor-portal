@@ -3,7 +3,7 @@ import CardInfo from "../CardInfo/CardInfo";
 
 const Info = () => {
   return (
-    <div className="w-full mb-10">
+    <div className="w-full">
       <CardInfo></CardInfo>
     </div>
   );

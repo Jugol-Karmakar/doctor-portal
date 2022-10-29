@@ -140,7 +140,7 @@ const SignIn = () => {
               <input
                 type="submit"
                 value="SignIn"
-                className="w-full bg-cyan-500 hover:bg-cyan-600 text-lg text-white font-bold py-3 rounded-lg cursor-pointer"
+                className="w-full bg-blue-600 text-lg text-white font-bold py-3 rounded-lg cursor-pointer"
               />
             </form>
             <div className="my-2">

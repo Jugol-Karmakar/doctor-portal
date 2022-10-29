@@ -1,4 +1,5 @@
 import React from "react";
+import banner from "../../Images/image/heading-banner.jpg";
 
 const AddDoctors = () => {
   const handelAddDoctor = (e) => {

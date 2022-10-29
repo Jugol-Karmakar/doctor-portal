@@ -51,7 +51,7 @@ const MyReview = () => {
             <input
               type="text"
               name="image"
-              placeholder="Image Url"
+              placeholder="Your Image Url"
               className="border focus:border-blue-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-md mx-14 rounded-full mb-4 px-6 py-3"
             />
             <textarea

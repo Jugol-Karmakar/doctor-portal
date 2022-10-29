@@ -2,6 +2,7 @@ import React from "react";
 import chairImage from "../../../Images/image/chair.png";
 import bgImage from "../../../Images/image/bg.png";
 import Button from "../../Shared/Button/Button";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -23,7 +24,9 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <Button>Get Started</Button>
+          <Link to="/appointment">
+            <Button>APPOINMENT</Button>
+          </Link>
         </div>
       </div>
     </div>

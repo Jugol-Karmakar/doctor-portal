@@ -11,75 +11,35 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination, Navigation } from "swiper";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Testimonial = () => {
-  const patients = [
-    {
-      _id: 1,
-      name: "Winson Herry",
-      image: people1,
-      description:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      address: "Gulsan Tongmor .Dhaka",
-    },
-    {
-      _id: 2,
-      name: "Ema Jannat",
-      image: people2,
-      description:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      address: "Uttra 34/3. Dhaka",
-    },
-    {
-      _id: 3,
-      name: "Rokia Banu",
-      image: people3,
-      description:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      address: "Fulbarigate,kuet. Khulna",
-    },
-    {
-      _id: 4,
-      name: "Rokia Banu",
-      image: people3,
-      description:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      address: "Fulbarigate,kuet. Khulna",
-    },
-    {
-      _id: 5,
-      name: "Rokia Banu",
-      image: people3,
-      description:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      address: "Fulbarigate,kuet. Khulna",
-    },
-    {
-      _id: 6,
-      name: "Rokia Banu",
-      image: people3,
-      description:
-        "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-      address: "Fulbarigate,kuet. Khulna",
-    },
-  ];
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
-    <section className="py-24 bg-[#e2f6fd]">
+    <section className="py-24 bg-white">
       <div className="container mx-auto flex justify-between px-10">
         <div className="">
-          <h4 className="text-cyan-400 text-2xl font-bold">Testimonial</h4>
-          <h2 className="text-3xl font-bold py-1">What's Your Patients Says</h2>
+          <h2 className="text-4xl font-bold text-center py-1">
+            What's Our Patients Says
+          </h2>
         </div>
         <div className="w-40">
           <img className="w-full h-full" src={quote} alt="" />
         </div>
       </div>
 
-      <div className="">
+      <div className="mx-20">
         <Swiper
-          slidesPerView={1}
+          slidesPerView={3}
           spaceBetween={30}
-          slidesPerGroup={1}
+          slidesPerGroup={3}
           loop={true}
           loopFillGroupWithBlank={true}
           pagination={{
@@ -87,28 +47,28 @@ const Testimonial = () => {
           }}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper w-1/2 mx-auto bg-white px-10 shadow-md rounded-xl"
+          className="mySwiper"
         >
-          {patients.map((patient) => (
+          {reviews.map((review) => (
             <SwiperSlide
-              key={patient._id}
-              className="flex flex-col items-center bg-blue-400 p-8 my-6  rounded-xl shadow-lg"
+              key={review._id}
+              className="flex flex-col items-center bg-blue-50 mt-4 mb-8 py-6 px-8"
             >
-              <div className="text-center">
-                <p className="text-white text-lg font-medium">
-                  {patient.description}
-                </p>
+              <div className="text-center pb-2 text-gray-800 font-medium">
+                <p className="">{review.review}</p>
               </div>
-              <div className="w-24 h-24 overflow-hidden my-2">
+              <div className="w-24 h-24 overflow-hidden my-4">
                 <img
                   className="w-full h-full object-cover rounded-full"
-                  src={patient.image}
+                  src={review.image}
                   alt=""
                 />
               </div>
-              <div className="flex flex-col items-center">
-                <h2 className="text-lg font-medium">{patient.name}</h2>
-                <p>{patient.address}</p>
+              <div className="text-center my-2">
+                <h2 className="text-xl font-bold text-gray-700">
+                  {review.name}
+                </h2>
+                <p className="text-blue-600 font-bold">{review.profession}</p>
               </div>
             </SwiperSlide>
           ))}

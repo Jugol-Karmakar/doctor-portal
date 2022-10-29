@@ -1,4 +1,5 @@
 import React from "react";
+import Prices from "../../About/Prices";
 import Archive from "../Archive/Archive";
 import Care from "../Care/Care";
 import Doctors from "../Doctors/Doctors";
@@ -14,11 +15,12 @@ const Home = () => {
     <div>
       <Hero></Hero>
       <Info></Info>
-      <Services></Services>
-      <Care></Care>
-      <Doctors isHome></Doctors>
       <MakeAppoinment></MakeAppoinment>
+      <Services></Services>
+      <Doctors isHome></Doctors>
+      <Care></Care>
       <Testimonial></Testimonial>
+      <Prices></Prices>
       <Archive></Archive>
       <NewsLetter></NewsLetter>
     </div>

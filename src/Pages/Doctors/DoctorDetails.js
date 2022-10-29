@@ -10,7 +10,7 @@ const DoctorDetails = (props) => {
     navigate(`/doctors/${id}`);
   };
   return (
-    <div className="shadow-xl my-8 rounded-xl">
+    <div className="shadow-lg my-8 rounded-xl border hover:-translate-y-2 transition-all duration-500">
       <div className="flex justify-center items-center -mt-16 ">
         <div className="w-32 h-32 rounded-full border-2 border-blue-600 overflow-hidden">
           <img className="w-full h-full object-cover" src={image} alt="" />

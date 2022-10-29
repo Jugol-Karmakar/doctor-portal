@@ -4,7 +4,7 @@ import dashboardlogo from "../../Images/image/dashboard-logo.png";
 
 const Dashboard = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-4">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">

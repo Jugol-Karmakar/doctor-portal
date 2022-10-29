@@ -2,7 +2,7 @@ import React from "react";
 import { toast } from "react-toastify";
 
 const UserRow = ({ user, refetch }) => {
-  const { email, role } = user;
+  const { id, email, role } = user;
 
   const makeAdmin = () => {
     fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -17,6 +17,20 @@ const UserRow = ({ user, refetch }) => {
         toast.success("Make Admin Successfully!!");
       });
   };
+
+  // const deleteUser = () => {
+  //   fetch(`http://localhost:5000/user/delete/${id}`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // };
+
   return (
     <tr>
       <td>1</td>

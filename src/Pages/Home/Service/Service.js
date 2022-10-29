@@ -3,9 +3,9 @@ import React from "react";
 const Service = (props) => {
   const { name, image, description } = props.service;
   return (
-    <div className="bg-white shadow-2xl rounded-lg overflow-hidden p-5">
-      <div className="w-full flex justify-center mb-3">
-        <img className="" src={image} alt="" />
+    <div className="bg-white shadow-2xl rounded-xl overflow-hidden py-8 px-5 hover:-translate-y-2 transition-all duration-500">
+      <div className="w-28 h-28 mx-auto mb-3">
+        <img className="w-full " src={image} alt="" />
       </div>
       <div className="text-center px-6">
         <h3 className="text-2xl font-bold mb-2">{name}</h3>

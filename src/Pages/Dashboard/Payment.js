@@ -25,7 +25,7 @@ const Payment = () => {
   return (
     <div>
       <h1 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
-        Please Pay For Your Appointmnet
+        Please Pay For Your Appointment
       </h1>
       <div className="mx-10">
         <div className="card w-50 max-w-md bg-base-100 shadow-xl my-8">
@@ -39,6 +39,7 @@ const Payment = () => {
                 {appointment.treatment}
               </span>
             </h2>
+            <p className="text-lg font-bold mb-2">Date : {appointment.date}</p>
             <p className="text-lg font-bold mb-2">Time : {appointment.slot}</p>
             <p className="text-xl font-bold mb-2">
               Price : ${appointment.price}
@@ -48,7 +49,7 @@ const Payment = () => {
         <div className="card flex-shrink-0 w-50 max-w-md shadow-xl bg-base-100 my-8">
           <div className="card-body">
             <Elements stripe={stripePromise} appointment={appointment}>
-              <CheckOutForm />
+              <CheckOutForm appointment={appointment} />
             </Elements>
           </div>
         </div>

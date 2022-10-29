@@ -2,13 +2,11 @@ import React from "react";
 import doctor from "../../../Images/image/doctor.png";
 import appointment from "../../../Images/image/appointment.png";
 import Button from "../../Shared/Button/Button";
+import { Link } from "react-router-dom";
 
 const MakeAppoinment = () => {
   return (
-    <section
-      className="w-full mt-10"
-      style={{ background: `url(${appointment})` }}
-    >
+    <section className="w-full" style={{ background: `url(${appointment})` }}>
       <div className="container mx-auto px-20 flex lg:flex-row flex-col  items-center">
         <div className="lg:w-1/2 w-full flex justify-center lg:justify-end lg:block hidden">
           <img
@@ -31,7 +29,9 @@ const MakeAppoinment = () => {
             packages and web page
           </p>
           <div className="my-3">
-            <Button>Get Started</Button>
+            <Link to="/appointment">
+              <Button>APPOINMENT</Button>
+            </Link>
           </div>
         </div>
       </div>

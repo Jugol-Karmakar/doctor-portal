@@ -30,9 +30,10 @@ const AboutHero = () => {
             praising teachings of the great explorer...
           </p>
           <div className="mt-6">
-            <Button>
-              More About Us <AiOutlineDoubleRight className="text-xl ml-3" />
-            </Button>
+            <button className="flex items-center bg-blue-600 px-10 py-3 font-bold rounded-full text-white drop-shadow-lg hover:bg-blue-500 transition-all duration-300">
+              More About Us
+              <AiOutlineDoubleRight className="text-xl ml-3" />
+            </button>
           </div>
         </div>
       </div>
