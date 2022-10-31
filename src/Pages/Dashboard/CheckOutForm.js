@@ -115,7 +115,7 @@ const CheckOutForm = ({ appointment }) => {
         <div className="text-green-600">
           <p>{success}</p>
           <p className="text-lg font-bold text-blue-600">
-            TransitionId : {transactionId}
+            TransitionID : {transactionId}
           </p>
         </div>
       )}

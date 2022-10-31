@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import dashboardlogo from "../../Images/image/dashboard-logo.png";
+import dashboardlogo from "../../Images/image/logo.png";
 
 const Dashboard = () => {
   return (
@@ -12,10 +12,10 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu overflow-y-auto w-80 bg-[#131c35] text-white">
+          <ul className="menu overflow-y-auto w-80 bg-[#1d2a4e] text-white">
             {/* <!-- Sidebar content here --> */}
             <div className="flex items-center justify-center py-2 my-2">
-              <img className="w-10 h-10 mr-3" src={dashboardlogo} alt="" />
+              <img className="w-14 h-10 mr-3" src={dashboardlogo} alt="" />
               <h2 className="text-2xl font-bold">DashBoard</h2>
             </div>
             <li className="hover:bg-gradient-to-r from-blue-500 to-blue-700  font-medium">
