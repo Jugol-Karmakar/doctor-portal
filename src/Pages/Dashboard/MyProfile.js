@@ -1,11 +1,58 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  const [openForm, setOpenForm] = useState(false);
-  const [update, setUpdate] = useState([]);
+
+  const [currentUser, setCurrentUser] = useState({});
+  const [updateProfile, setUpdateProfile] = useState(false);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setCurrentUser(data));
+  }, []);
+
+  console.log(currentUser);
+
+  const handelUpdateProfile = (e) => {
+    e.preventDefault();
+
+    const email = currentUser?.email;
+    const name = user?.displayName;
+    const avatar = currentUser?.avatar;
+
+    const education = e.target.education.value;
+    const address = e.target.address.value;
+    const phone = e.target.phone.value;
+    const link = e.target.link.value;
+
+    const upateInfo = {
+      email,
+      name,
+      avatar,
+      education,
+      address,
+      phone,
+      link,
+    };
+
+    fetch(`http://localhost:5000/users/${user?.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(upateInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+    setUpdateProfile(false);
+  };
 
   return (
     <div>
@@ -29,15 +76,59 @@ const MyProfile = () => {
               </div>
               <button
                 className="bg-blue-600 px-6 py-2 font-bold text-lg text-white rounded-full"
-                onClick={() => setOpenForm(!openForm)}
+                onClick={() => setUpdateProfile(!updateProfile)}
               >
                 Edit profile
               </button>
             </div>
 
-            {openForm ? (
+            {!updateProfile && (
               <div>
-                <form className="flex flex-col justify-end">
+                <div className="mb-4">
+                  <p className=" font-medium text-gray-600">Full Name</p>
+                  <h2 className="text-left text-lg font-medium">
+                    {user.displayName}
+                  </h2>
+                </div>
+                <div className="mb-4">
+                  <p className="font-medium text-gray-600">Email</p>
+                  <h2 className="text-left text-lg font-medium">
+                    {currentUser.email}
+                  </h2>
+                </div>
+                <div className="mb-4">
+                  <p className="font-medium text-gray-600">Education</p>
+                  <h2 className="text-left text-lg font-medium">
+                    {currentUser?.user?.education}
+                  </h2>
+                </div>
+                <div className="mb-4">
+                  <p className="font-medium text-gray-600">Address</p>
+                  <h2 className="text-left text-xl font-medium">
+                    {currentUser?.user?.address}
+                  </h2>
+                </div>
+                <div className="mb-4">
+                  <p className="font-medium text-gray-600">Phone</p>
+                  <h2 className="text-left text-lg font-medium">
+                    {currentUser?.user?.phone}
+                  </h2>
+                </div>
+                <div className="mb-4">
+                  <p className="font-medium text-gray-600">Linked In Profile</p>
+                  <h2 className="text-left text-lg font-medium">
+                    {currentUser?.user?.link}
+                  </h2>
+                </div>
+              </div>
+            )}
+
+            {updateProfile && (
+              <div>
+                <form
+                  onSubmit={(e) => handelUpdateProfile(e)}
+                  className="flex flex-col justify-end"
+                >
                   <input
                     type="text"
                     name="education"
@@ -59,7 +150,7 @@ const MyProfile = () => {
                   <input
                     type="text"
                     name="link"
-                    placeholder="LinkedIn Profile Link"
+                    placeholder="Linked In Profile"
                     className="border focus:border-blue-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs mx-14 rounded-full mb-4 px-6 py-3"
                   />
                   <input
@@ -68,47 +159,6 @@ const MyProfile = () => {
                     value="Update Profile"
                   />
                 </form>
-              </div>
-            ) : (
-              <div>
-                <div className="mb-4">
-                  <p className=" font-medium text-gray-600">Full Name</p>
-                  <h2 className="text-left text-lg font-medium">
-                    {user.displayName}
-                  </h2>
-                </div>
-                <div className="mb-4">
-                  <p className="font-medium text-gray-600">Email</p>
-                  <h2 className="text-left text-lg font-medium">
-                    {user.email}
-                  </h2>
-                </div>
-                <div className="mb-4">
-                  <p className="font-medium text-gray-600">Education</p>
-                  <h2 className="text-left text-lg font-medium">
-                    {update.education}
-                  </h2>
-                </div>
-                <div className="mb-4">
-                  <p className="text-lg font-medium text-gray-600">Address</p>
-                  <h2 className="text-left text-xl font-medium">
-                    {update.address}
-                  </h2>
-                </div>
-                <div className="mb-4">
-                  <p className="font-medium text-gray-600">Phone</p>
-                  <h2 className="text-left text-lg font-medium">
-                    {update.phone}
-                  </h2>
-                </div>
-                <div className="mb-4">
-                  <p className="font-medium text-gray-600">
-                    LinkedIn Profile Link
-                  </p>
-                  <h2 className="text-left text-lg font-medium">
-                    {update.link}
-                  </h2>
-                </div>
               </div>
             )}
           </div>
