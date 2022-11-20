@@ -15,8 +15,6 @@ const MyProfile = () => {
       .then((data) => setCurrentUser(data));
   }, []);
 
-  console.log(currentUser);
-
   const handelUpdateProfile = (e) => {
     e.preventDefault();
 
@@ -50,7 +48,6 @@ const MyProfile = () => {
       .then((data) => {
         console.log(data);
       });
-
     setUpdateProfile(false);
   };
 
