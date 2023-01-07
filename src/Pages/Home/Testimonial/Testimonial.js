@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -41,12 +41,16 @@ const Testimonial = () => {
           spaceBetween={30}
           slidesPerGroup={3}
           loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           loopFillGroupWithBlank={true}
           pagination={{
             clickable: true,
           }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
           {reviews.map((review) => (

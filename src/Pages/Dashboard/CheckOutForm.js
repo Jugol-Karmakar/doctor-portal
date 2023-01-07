@@ -114,7 +114,7 @@ const CheckOutForm = ({ appointment }) => {
       {success && (
         <div className="text-green-600">
           <p>{success}</p>
-          <p className="text-lg font-bold text-blue-600">
+          <p className="font-bold text-blue-600">
             TransitionID : {transactionId}
           </p>
         </div>

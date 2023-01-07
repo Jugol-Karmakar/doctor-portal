@@ -14,12 +14,20 @@ const MyAppointment = () => {
         .then((data) => setAppointments(data));
     }
   }, [user]);
+
+  const handleAppointmentDelete = () => {
+    const sure = window.confirm("Are you sure want to delete?");
+    if (sure) {
+      fetch(`http://localhost:5000/booking/${appointments._id}`);
+    }
+  };
+
   return (
     <div>
       <h2 className="text-4xl font-bold mx-6 mb-6 border-b-2 border-blue-600 pb-4">
         My Appointment {appointments.length}
       </h2>
-      <div className="overflow-x-auto px-7">
+      <div className="overflow-x-auto px-7 mb-7">
         <table className="table w-full">
           <thead>
             <tr>
@@ -29,6 +37,7 @@ const MyAppointment = () => {
               <th>Slot</th>
               <th>Treatment</th>
               <th>Payment</th>
+              <th>Cancel</th>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +58,22 @@ const MyAppointment = () => {
                   )}
                   {appoin.price && appoin.paid && (
                     <span className="text-green-500 font-bold">Paid</span>
+                  )}
+                </td>
+                <td className="font-semibold pr-3">
+                  {appoin.price && !appoin.paid && (
+                    <button
+                      onClick={handleAppointmentDelete}
+                      className="btn btn-xs bg-red-600 border-0"
+                    >
+                      Cancel
+                    </button>
+                  )}
+                  {appoin.price && appoin.paid && (
+                    <p className="text-sm text-green-600">
+                      <span className="text-black">transactionId :</span> <br />
+                      {appoin.transactionId}
+                    </p>
                   )}
                 </td>
               </tr>
