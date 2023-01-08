@@ -20,7 +20,7 @@ const AllUsers = () => {
         All Users {users.length}
       </h1>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mx-3">
         <table className="table w-full">
           <thead>
             <tr>

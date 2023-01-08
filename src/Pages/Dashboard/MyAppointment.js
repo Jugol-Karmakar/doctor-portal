@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const MyAppointment = () => {
@@ -8,17 +9,33 @@ const MyAppointment = () => {
   const [user] = useAuthState(auth);
 
   useEffect(() => {
+    updateAppoinment();
+  }, []);
+
+  const updateAppoinment = () => {
     if (user) {
       fetch(`http://localhost:5000/booking?patient${user.email}`)
         .then((res) => res.json())
         .then((data) => setAppointments(data));
     }
-  }, [user]);
+  };
 
-  const handleAppointmentDelete = () => {
+  const handleAppointmentDelete = (id) => {
     const sure = window.confirm("Are you sure want to delete?");
     if (sure) {
-      fetch(`http://localhost:5000/booking/${appointments._id}`);
+      fetch(`http://localhost:5000/booking/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast.success("Your appointment date cancel..!!");
+            updateAppoinment();
+          }
+        });
     }
   };
 
@@ -27,7 +44,7 @@ const MyAppointment = () => {
       <h2 className="text-4xl font-bold mx-6 mb-6 border-b-2 border-blue-600 pb-4">
         My Appointment {appointments.length}
       </h2>
-      <div className="overflow-x-auto px-7 mb-7">
+      <div className="overflow-x-auto px-7">
         <table className="table w-full">
           <thead>
             <tr>
@@ -63,7 +80,7 @@ const MyAppointment = () => {
                 <td className="font-semibold pr-3">
                   {appoin.price && !appoin.paid && (
                     <button
-                      onClick={handleAppointmentDelete}
+                      onClick={() => handleAppointmentDelete(appoin._id)}
                       className="btn btn-xs bg-red-600 border-0"
                     >
                       Cancel

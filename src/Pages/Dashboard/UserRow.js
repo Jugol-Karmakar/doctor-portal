@@ -1,4 +1,5 @@
 import React from "react";
+import { FaUserAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const UserRow = ({ user, refetch }) => {
@@ -40,7 +41,9 @@ const UserRow = ({ user, refetch }) => {
 
   return (
     <tr>
-      <td>1</td>
+      <td>
+        <FaUserAlt className="text-green-600" />
+      </td>
       <td>{email}</td>
       <td>
         {role !== "admin" ? (

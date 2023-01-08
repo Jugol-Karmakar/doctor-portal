@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const MyProfile = () => {
@@ -10,10 +11,14 @@ const MyProfile = () => {
   const [updateProfile, setUpdateProfile] = useState(false);
 
   useEffect(() => {
+    profileUpdate();
+  }, [user?.email]);
+
+  const profileUpdate = () => {
     fetch(`http://localhost:5000/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCurrentUser(data));
-  }, []);
+  };
 
   const handelUpdateProfile = (e) => {
     e.preventDefault();
@@ -47,6 +52,8 @@ const MyProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success("Profile Update Successfully..!");
+        profileUpdate();
       });
     setUpdateProfile(false);
   };
