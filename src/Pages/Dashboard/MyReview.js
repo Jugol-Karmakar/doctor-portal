@@ -18,7 +18,7 @@ const MyReview = () => {
       review,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://doctor-portal-server-green.vercel.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

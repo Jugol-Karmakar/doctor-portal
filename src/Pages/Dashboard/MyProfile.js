@@ -15,7 +15,7 @@ const MyProfile = () => {
   }, [user?.email]);
 
   const profileUpdate = () => {
-    fetch(`http://localhost:5000/users/${user?.email}`)
+    fetch(`https://doctor-portal-server-green.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCurrentUser(data));
   };
@@ -42,13 +42,16 @@ const MyProfile = () => {
       link,
     };
 
-    fetch(`http://localhost:5000/users/${user?.email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(upateInfo),
-    })
+    fetch(
+      `https://doctor-portal-server-green.vercel.app/users/${user?.email}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(upateInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

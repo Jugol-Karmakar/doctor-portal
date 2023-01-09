@@ -19,7 +19,7 @@ const AddDoctors = () => {
       details,
     };
 
-    fetch("http://localhost:5000/doctor", {
+    fetch("https://doctor-portal-server-green.vercel.app/doctor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../../Shared/Loading/Loading";
 import AppointmentModal from "../AppointmentModal/AppointmentModal";
@@ -14,9 +14,9 @@ const Avaliable = ({ date }) => {
     isLoading,
     refetch,
   } = useQuery(["available", formettedDate], () =>
-    fetch(`http://localhost:5000/available?date=${formettedDate}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://doctor-portal-server-green.vercel.app/available?date=${formettedDate}`
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;
