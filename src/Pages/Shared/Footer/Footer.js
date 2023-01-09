@@ -56,31 +56,45 @@ const Footer = () => {
         </div>
         <div>
           <span className="text-2xl font-bold text-[#3A4256]">Services</span>
-          <a className="link link-hover">Emergency Checkup</a>
-          <a className="link link-hover">Monthly Checkup</a>
-          <a className="link link-hover">Weekly Checkup</a>
-          <a className="link link-hover">Deep Checkup</a>
+          <a href="/" className="link link-hover">
+            Emergency Checkup
+          </a>
+          <a href="/" className="link link-hover">
+            Monthly Checkup
+          </a>
+          <a href="/" className="link link-hover">
+            Weekly Checkup
+          </a>
+          <a href="/" className="link link-hover">
+            Deep Checkup
+          </a>
         </div>
         <div>
           <span className="text-2xl font-bold text-[#3A4256]">Oral Health</span>
-          <a className="link link-hover">Fluoride Treatment</a>
-          <a className="link link-hover">Cavity Filling</a>
-          <a className="link link-hover">Teath Whitening</a>
+          <a href="/" className="link link-hover">
+            Fluoride Treatment
+          </a>
+          <a href="/" className="link link-hover">
+            Cavity Filling
+          </a>
+          <a href="/" className="link link-hover">
+            Teath Whitening
+          </a>
         </div>
         <div>
           <span className="text-2xl font-bold text-[#3A4256]">Our Address</span>
           <div className="grid grid-flow-col gap-4">
             <div className="flex flex-col">
-              <a className="flex items-center mb-3">
+              <a href="/" className="flex items-center mb-3">
                 <FaHome className="text-lg mr-2 text-blue-600" /> 58 A, East
                 Madison Street, Baltimore
               </a>
-              <a className="flex items-center mb-3">
+              <a href="/" className="flex items-center mb-3">
                 {" "}
                 <BsFillTelephoneFill className="text-lg mr-2 text-blue-600" />
                 +91 12345678
               </a>
-              <a className="flex items-center mb-3">
+              <a href="/" className="flex items-center mb-3">
                 <MdEmail className="text-lg mr-2 text-blue-600" />
                 support@somemail.com
               </a>

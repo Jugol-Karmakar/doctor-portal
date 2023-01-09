@@ -1,7 +1,6 @@
 import React from "react";
 import bgImage from "../../Images/image/bg.png";
 import about from "../../Images/image/about.jpg";
-import Button from "../Shared/Button/Button";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
 const AboutHero = () => {

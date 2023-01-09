@@ -53,6 +53,7 @@ const SignIn = () => {
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+    toast("Log in Successfully.");
   };
 
   const resetPassword = () => {

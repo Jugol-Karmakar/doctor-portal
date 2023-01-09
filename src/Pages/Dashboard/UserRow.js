@@ -3,7 +3,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const UserRow = ({ user, refetch }) => {
-  const { id, email, role } = user;
+  const { email, role } = user;
 
   const makeAdmin = () => {
     fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -32,7 +32,7 @@ const UserRow = ({ user, refetch }) => {
         .then((data) => {
           if (data.deletedCount > 0) {
             refetch();
-            toast.success("user delete Successfully !!");
+            toast.success("User delete successfully !!");
           }
           console.log(data);
         });

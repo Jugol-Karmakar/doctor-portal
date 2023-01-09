@@ -1,9 +1,5 @@
 import React from "react";
 import quote from "../../../Images/icons/quote.svg";
-import people1 from "../../../Images/image/people1.png";
-import people2 from "../../../Images/image/people2.png";
-import people3 from "../../../Images/image/people3.png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";

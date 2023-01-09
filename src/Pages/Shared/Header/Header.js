@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import logo from "../../../Images/image/logo.png";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -11,6 +12,7 @@ const Header = () => {
   const logOut = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
+    toast("Log out Successfully..");
   };
 
   const menuItem = (
@@ -37,11 +39,16 @@ const Header = () => {
       )}
       <li>
         {user ? (
-          <button onClick={logOut} className="btn btn-active btn-ghost">
+          <button
+            onClick={logOut}
+            className="bg-blue-600 px-6 text-white font-medium"
+          >
             Sign Out
           </button>
         ) : (
-          <Link to="/signin">Sign In</Link>
+          <button className="border px-6 border-blue-600 font-semibold hover:bg-blue-600  hover:text-white transition-all duration-300">
+            <Link to="/signin">Sign In</Link>
+          </button>
         )}
       </li>
     </>

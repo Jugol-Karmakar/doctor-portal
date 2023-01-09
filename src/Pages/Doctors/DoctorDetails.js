@@ -7,7 +7,7 @@ const DoctorDetails = (props) => {
   const navigate = useNavigate();
 
   const doctorProfile = (id) => {
-    navigate(`/doctors/${id}`);
+    navigate(`/doctors/${_id}`);
   };
   return (
     <div className="shadow-lg my-8 rounded-xl border hover:-translate-y-2 transition-all duration-500">

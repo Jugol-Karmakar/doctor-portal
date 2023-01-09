@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import write from "../../Images/image/write.webp";
 
 const MyReview = () => {
@@ -25,7 +26,11 @@ const MyReview = () => {
       body: JSON.stringify(reviews),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        toast.success("Thanks for your review.");
+        console.log(data);
+        e.target.reset();
+      });
   };
 
   return (

@@ -29,12 +29,13 @@ const Choose = () => {
   ];
   return (
     <section className="my-20">
-      <div className="text-center my-4">
-        <h4 className="text-2xl font-bold text-blue-600">Why Choose Us</h4>
+      <div className="text-center mt-4 mb-8">
         <h1 className="text-4xl font-bold text-black">
-          Advantages & Technologies
+          Ad<span className="border-b-4 border-blue-600 pb-2">van</span>
+          tages & Tech
+          <span className="border-b-4 border-blue-600 pb-2">no</span>logies
         </h1>
-        <p className="my-2 py-2 text-gray-500">
+        <p className="mt-6 py-2 text-gray-500">
           Your teeth play an important part in your daily life. It not only
           helps you to chew and eat your food, but <br /> frames your face. Any
           missing tooth can have a major impact on your quality of life.
@@ -43,7 +44,7 @@ const Choose = () => {
       <div className="container mx-auto px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center my-10">
         {chooses.map((choose) => (
           <div key={choose.id} className="p-6 shadow-xl">
-            <p className="text-lg text-blue-600 font-bold py-2">{choose.id}</p>
+            <p className="text-lg text-black font-bold py-2">{choose.id}</p>
             <div className="w-24 h-24 mx-auto">
               <img className="w-full object-cover" src={choose.image} alt="" />
             </div>

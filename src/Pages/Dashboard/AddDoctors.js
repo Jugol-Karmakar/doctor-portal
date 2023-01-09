@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../Images/image/heading-banner.jpg";
+import { toast } from "react-toastify";
 
 const AddDoctors = () => {
   const handelAddDoctor = (e) => {
@@ -27,7 +27,11 @@ const AddDoctors = () => {
       body: JSON.stringify(doctor),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        toast.success("New doctor add doctor-portal..!");
+        console.log(data);
+        e.target.reset();
+      });
   };
 
   return (
