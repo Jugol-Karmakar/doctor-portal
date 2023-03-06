@@ -9,7 +9,7 @@ const AllUsers = () => {
     isLoading,
     refetch,
   } = useQuery("user", () =>
-    fetch("https://doctor-portal-server-green.vercel.app/user").then((res) =>
+    fetch("https://doctor-portal-jdev.onrender.com/user").then((res) =>
       res.json()
     )
   );

@@ -15,7 +15,7 @@ const MyAppointment = () => {
   const updateAppoinment = () => {
     if (user) {
       fetch(
-        `https://doctor-portal-server-green.vercel.app/booking?patient${user.email}`
+        `https://doctor-portal-jdev.onrender.com/booking?patient${user.email}`
       )
         .then((res) => res.json())
         .then((data) => setAppointments(data));
@@ -25,7 +25,7 @@ const MyAppointment = () => {
   const handleAppointmentDelete = (id) => {
     const sure = window.confirm("Are you sure want to delete?");
     if (sure) {
-      fetch(`https://doctor-portal-server-green.vercel.app/booking/${id}`, {
+      fetch(`https://doctor-portal-jdev.onrender.com/booking/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

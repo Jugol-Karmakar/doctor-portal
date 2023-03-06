@@ -25,7 +25,7 @@ const AppointmentModal = ({ date, treatment, setTreatment, refetch }) => {
       phone: e.target.phone.value,
     };
 
-    fetch("https://doctor-portal-server-green.vercel.app/booking", {
+    fetch("https://doctor-portal-jdev.onrender.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

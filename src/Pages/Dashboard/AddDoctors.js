@@ -19,7 +19,7 @@ const AddDoctors = () => {
       details,
     };
 
-    fetch("https://doctor-portal-server-green.vercel.app/doctor", {
+    fetch("https://doctor-portal-jdev.onrender.com/doctor", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

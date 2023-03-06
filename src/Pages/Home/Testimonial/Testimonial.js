@@ -14,7 +14,7 @@ const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://doctor-portal-server-green.vercel.app/reviews")
+    fetch("https://doctor-portal-jdev.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

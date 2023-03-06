@@ -6,7 +6,7 @@ const UserRow = ({ user, refetch }) => {
   const { email, role } = user;
 
   const makeAdmin = () => {
-    fetch(`https://doctor-portal-server-green.vercel.app/user/admin/${email}`, {
+    fetch(`https://doctor-portal-jdev.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -22,7 +22,7 @@ const UserRow = ({ user, refetch }) => {
   const handleDeleteUser = () => {
     const sure = window.confirm("Are you sure want to delete user?");
     if (sure) {
-      fetch(`https://doctor-portal-server-green.vercel.app/user/${email}`, {
+      fetch(`https://doctor-portal-jdev.onrender.com/user/${email}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

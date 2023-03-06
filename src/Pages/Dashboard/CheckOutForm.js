@@ -12,16 +12,13 @@ const CheckOutForm = ({ appointment }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch(
-      "https://doctor-portal-server-green.vercel.app/create-payment-intent",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ price }),
-      }
-    )
+    fetch("https://doctor-portal-jdev.onrender.com/create-payment-intent", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ price }),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.clientSecret) {
@@ -74,7 +71,7 @@ const CheckOutForm = ({ appointment }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`https://doctor-portal-server-green.vercel.app/booking/${_id}`, {
+      fetch(`https://doctor-portal-jdev.onrender.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

@@ -15,7 +15,7 @@ const Avaliable = ({ date }) => {
     refetch,
   } = useQuery(["available", formettedDate], () =>
     fetch(
-      `https://doctor-portal-server-green.vercel.app/available?date=${formettedDate}`
+      `https://doctor-portal-jdev.onrender.com/available?date=${formettedDate}`
     ).then((res) => res.json())
   );
   if (isLoading) {
